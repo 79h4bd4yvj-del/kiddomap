@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
-<title>KiddoMap — Planes con niños, cerca de ti</title>
+<title>Kidsplora — Planes con niños, cerca de ti</title>
 <meta name="description" content="Descubre parques, museos, salones de juego y eventos para niños cerca de ti, clasificados por edades. / Find kid-friendly places and events near you, sorted by age group.">
 <meta name="theme-color" content="#FF6B5E">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
-<meta name="apple-mobile-web-app-title" content="KiddoMap">
+<meta name="apple-mobile-web-app-title" content="Kidsplora">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="icon" href="icon-180.png">
@@ -204,13 +204,61 @@ textarea.rev-in:focus{outline:none;border-color:var(--teal)}
 label.flabel{font-weight:800;font-size:13px;display:block;margin:10px 0 5px;color:var(--ink2)}
 input.fin{width:100%;border:2px solid var(--line);border-radius:13px;padding:11px 13px;font-weight:700;background:var(--bg)}
 input.fin:focus{outline:none;border-color:var(--teal)}
+
+/* ---------- v0.2 additions ---------- */
+.photos{display:flex;gap:8px;margin:12px 0 4px}
+.photos .ph{flex:1;height:112px;border-radius:14px;object-fit:cover;width:50%;background:#F2EDE2}
+.photos .ph-more{flex:0 0 64px;height:112px;border-radius:14px;background:var(--sun-soft);display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:900;color:#8A6100;font-size:13px;gap:3px}
+.photo-empty{background:var(--bg);border:1.5px dashed var(--line);border-radius:14px;padding:14px;text-align:center;font-size:12.5px;color:var(--ink2);font-weight:700;margin:12px 0 4px}
+.rating-row{display:flex;align-items:center;gap:8px;margin:10px 0 2px;flex-wrap:wrap}
+.rating-row .avg{font-weight:900;font-size:17px}
+.rating-row .stars{color:var(--sun);font-size:16px;letter-spacing:1px}
+.rating-row small{color:var(--ink2);font-weight:700}
+.rate-me{display:flex;align-items:center;gap:6px;background:var(--bg);border:1.5px solid var(--line);border-radius:13px;padding:8px 12px;margin:8px 0}
+.rate-me span{font-weight:800;font-size:12.5px;color:var(--ink2)}
+.rate-me button{font-size:21px;filter:grayscale(1);opacity:.4}
+.rate-me button.on{filter:none;opacity:1}
+.movie{display:flex;align-items:center;gap:10px;padding:10px 2px;border-bottom:1px solid var(--line)}
+.movie .mt{flex:1;font-weight:800;font-size:14px}
+.movie .mt small{display:block;color:var(--ink2);font-weight:700;font-size:11.5px}
+.badge.mpaa{background:#E8ECF6;color:#3D5387}
+.showtimes{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.showtimes button{background:var(--teal-soft);color:var(--teal);font-weight:900;font-size:12.5px;border-radius:9px;padding:6px 10px}
+#tour{position:fixed;inset:0;z-index:66;background:rgba(23,32,54,.58);display:flex;align-items:center;justify-content:center;padding:28px}
+.tour-card{background:var(--card);border-radius:24px;padding:26px 22px;max-width:340px;width:100%;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.tour-card .temoji{font-size:52px;margin-bottom:10px}
+.tour-card h3{font-size:19px;margin-bottom:8px}
+.tour-card p{font-weight:600;color:var(--ink2);font-size:14.5px;line-height:1.5;min-height:66px}
+.tour-dots{display:flex;gap:6px;justify-content:center;margin:14px 0}
+.tour-dots span{width:8px;height:8px;border-radius:50%;background:var(--line)}
+.tour-dots span.on{background:var(--brand);width:22px;border-radius:99px}
+.tour-skip{color:var(--lock);font-weight:800;font-size:13px;margin-top:10px}
+.post{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:13px 15px;margin-bottom:11px}
+.post .ph-head{display:flex;gap:10px;align-items:center;margin-bottom:7px}
+.post .avatar{width:38px;height:38px;border-radius:50%;background:var(--teal-soft);display:flex;align-items:center;justify-content:center;font-size:19px}
+.post .pname{font-weight:900;font-size:14px}
+.post .ptime{font-size:11.5px;color:var(--lock);font-weight:700}
+.post p{font-size:14px;font-weight:600;color:var(--ink);line-height:1.45}
+.post .pacts{display:flex;gap:14px;margin-top:9px}
+.post .pacts button{font-weight:800;font-size:12.5px;color:var(--ink2)}
+.composer{background:var(--card);border:1.5px solid var(--line);border-radius:var(--r);padding:12px;margin-bottom:14px}
+.composer textarea{width:100%;border:none;background:none;font-weight:600;font-size:14px;resize:none;min-height:52px;outline:none;font-family:inherit}
+.groups-row{display:flex;gap:7px;overflow-x:auto;margin:0 0 14px;padding-bottom:2px;scrollbar-width:none}
+.groups-row::-webkit-scrollbar{display:none}
+.gchip{flex:0 0 auto;background:var(--teal-soft);color:var(--teal);font-weight:800;font-size:12.5px;border-radius:99px;padding:8px 13px}
+.gchip.on{background:var(--teal);color:#fff}
+.legal-check{display:flex;gap:10px;align-items:flex-start;margin:10px 0;font-size:13px;font-weight:600;color:var(--ink2);line-height:1.4}
+.legal-check input{width:20px;height:20px;flex-shrink:0;accent-color:var(--teal);margin-top:1px}
+.terms-text{font-size:13px;font-weight:600;color:var(--ink2);line-height:1.55}
+.terms-text h4{color:var(--ink);margin:14px 0 4px;font-size:14px}
+
 </style>
 </head>
 <body>
 
 <div id="onboard">
-  <div class="biglogo"><span style="transform:rotate(8deg)">🧒</span></div>
-  <h1>Kiddo<em>Map</em></h1>
+  <img src="icon-192.png" alt="" style="width:96px;height:96px;border-radius:26px;box-shadow:0 10px 30px rgba(255,107,94,.45);margin-bottom:18px">
+  <h1>Kids<em>plora</em></h1>
   <p class="tag" data-i18n="ob_tag"></p>
   <div class="ob-perks">
     <div><span class="pi">🗺️</span><span data-i18n="ob_p1"></span></div>
@@ -223,7 +271,7 @@ input.fin:focus{outline:none;border-color:var(--teal)}
 </div>
 
 <header>
-  <div class="logo"><div class="pin"><span>🧒</span></div><span>Kiddo<em>Map</em></span></div>
+  <div class="logo"><img src="icon-192.png" alt="" style="width:32px;height:32px;border-radius:9px"><span>Kids<em>plora</em></span></div>
   <div class="hbtns">
     <button class="bell" id="btn-notif">🔔<span class="dot hidden" id="notif-dot"></span></button>
     <button class="chip-btn" id="btn-lang">EN</button>
@@ -258,6 +306,7 @@ input.fin:focus{outline:none;border-color:var(--teal)}
   <section class="view" id="view-list"><div class="scroll" id="list-scroll"></div></section>
   <section class="view" id="view-events"><div class="scroll" id="events-scroll"></div></section>
   <section class="view" id="view-agenda"><div class="scroll" id="agenda-scroll"></div></section>
+  <section class="view" id="view-community"><div class="scroll" id="community-scroll"></div></section>
   <section class="view" id="view-profile"><div class="scroll" id="profile-scroll"></div></section>
 </main>
 
@@ -266,6 +315,7 @@ input.fin:focus{outline:none;border-color:var(--teal)}
   <button data-view="list"><span class="ico">📋</span><span data-i18n="nav_list"></span></button>
   <button data-view="events"><span class="ico">🎪</span><span data-i18n="nav_events"></span></button>
   <button data-view="agenda"><span class="ico">📅</span><span data-i18n="nav_agenda"></span></button>
+  <button data-view="community"><span class="ico">💬</span><span data-i18n="nav_community"></span></button>
   <button data-view="profile"><span class="ico">👤</span><span data-i18n="nav_profile"></span></button>
 </nav>
 
@@ -277,6 +327,9 @@ input.fin:focus{outline:none;border-color:var(--teal)}
 <div class="modal" id="notif-modal"><div class="mbg" data-close="notif-modal"></div><div class="mcard" id="notif-body"></div></div>
 <div class="modal" id="review-modal"><div class="mbg" data-close="review-modal"></div><div class="mcard" id="review-body"></div></div>
 <div class="modal" id="sched-modal"><div class="mbg" data-close="sched-modal"></div><div class="mcard" id="sched-body"></div></div>
+
+<div id="tour" class="hidden"><div class="tour-card" id="tour-card"></div></div>
+<div class="modal" id="terms-modal"><div class="mbg" data-close="terms-modal"></div><div class="mcard" id="terms-body"></div></div>
 
 <div id="toast"></div>
 

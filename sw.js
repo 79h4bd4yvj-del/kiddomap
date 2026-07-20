@@ -1,5 +1,5 @@
 /* KiddoMap service worker — cache app shell for faster loads */
-const CACHE = "kiddomap-v1";
+const CACHE = "kidsplora-v2";
 const SHELL = ["./", "./index.html", "./app.js", "./manifest.webmanifest", "./icon-192.png", "./icon-512.png"];
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
